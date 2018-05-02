@@ -1,4 +1,4 @@
-#pragma once
+п»ї#pragma once
 #include <vector> 
 #include "date.h"
 
@@ -7,12 +7,12 @@ using namespace std;
 class Temperature 
 {
 	bool FirstAdd;
-	vector<pair<Date, double>> calendar; // массив дат и температур 
-	Date lastDate; //Последнее добавленное значение
+	vector<pair<Date, double>> calendar; // РјР°СЃСЃРёРІ РґР°С‚ Рё С‚РµРјРїРµСЂР°С‚СѓСЂ 
+	Date lastDate; //РџРѕСЃР»РµРґРЅРµРµ РґРѕР±Р°РІР»РµРЅРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ
 public:
 	Temperature() {FirstAdd = true;} 
-	Temperature (vector<pair<Date, double> > c); // конструктор
-	double GetAverageTemp(bool b); // среднее значение
+	Temperature (vector<pair<Date, double> > c); // РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ
+	double GetAverageTemp(bool b); // СЃСЂРµРґРЅРµРµ Р·РЅР°С‡РµРЅРёРµ
 	void Show();
-	void Add (Date d, double temp); // добавляет новую запись в массив
+	void Add (Date d, double temp); // РґРѕР±Р°РІР»СЏРµС‚ РЅРѕРІСѓСЋ Р·Р°РїРёСЃСЊ РІ РјР°СЃСЃРёРІ
 };

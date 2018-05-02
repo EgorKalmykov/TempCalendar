@@ -1,27 +1,27 @@
-#include "temperaure.h"
+п»ї#include "temperaure.h"
 
-Temperature::Temperature(vector<pair<Date, double>> m) // вектор, элементами которого является пара date и double
+Temperature::Temperature(vector<pair<Date, double>> m) // РІРµРєС‚РѕСЂ, СЌР»РµРјРµРЅС‚Р°РјРё РєРѕС‚РѕСЂРѕРіРѕ СЏРІР»СЏРµС‚СЃСЏ РїР°СЂР° date Рё double
 {
 	FirstAdd = false; 
 	calendar = m;
-	lastDate = calendar[calendar.size()-1].first; // устанавливаем последнюю добавленную дату
+	lastDate = calendar[calendar.size()-1].first; // СѓСЃС‚Р°РЅР°РІР»РёРІР°РµРј РїРѕСЃР»РµРґРЅСЋСЋ РґРѕР±Р°РІР»РµРЅРЅСѓСЋ РґР°С‚Сѓ
 }
 
 void Temperature::Add(Date d, double temp)
 {
 	if (FirstAdd)
 	{
-		calendar.push_back(pair<Date, double>(d, temp)); //Добавление даты и температуры в этот день
-		lastDate = d; //Предыдущая запись
+		calendar.push_back(pair<Date, double>(d, temp)); //Р”РѕР±Р°РІР»РµРЅРёРµ РґР°С‚С‹ Рё С‚РµРјРїРµСЂР°С‚СѓСЂС‹ РІ СЌС‚РѕС‚ РґРµРЅСЊ
+		lastDate = d; //РџСЂРµРґС‹РґСѓС‰Р°СЏ Р·Р°РїРёСЃСЊ
 		FirstAdd = false;
 	}
 	else
 	{
 		if (d < lastDate)
-			throw "Неверный порядок заполнения\0";
+			throw "РќРµРІРµСЂРЅС‹Р№ РїРѕСЂСЏРґРѕРє Р·Р°РїРѕР»РЅРµРЅРёСЏ\0";
 		else
 		{
-			calendar.push_back(pair<Date, double>(d, temp)); // добавляет новы элемент в конец вектора
+			calendar.push_back(pair<Date, double>(d, temp)); // РґРѕР±Р°РІР»СЏРµС‚ РЅРѕРІС‹ СЌР»РµРјРµРЅС‚ РІ РєРѕРЅРµС† РІРµРєС‚РѕСЂР°
 			lastDate = d;
 		}
 	}
@@ -32,7 +32,7 @@ double Temperature::GetAverageTemp(bool b)
 	double sum = 0;
 	int k = 0;
 	for (int i = 0; i < calendar.size(); i++)
-		if (calendar[i].first.IsDay() == b) // отсивает день или ночь
+		if (calendar[i].first.IsDay() == b) // РѕС‚СЃРёРІР°РµС‚ РґРµРЅСЊ РёР»Рё РЅРѕС‡СЊ
 		{
 			sum += calendar[i].second;
 			k++;
