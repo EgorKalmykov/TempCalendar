@@ -19,7 +19,7 @@ void main()
 		t.Add(d2, 15);
 		t.Add(d3, 8);
 
-		int a = t.GetAverageTemp(true);
+		double a = t.GetAverageTemp(true);
 		cout << a << "\n";
 
 		t.Show();

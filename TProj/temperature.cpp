@@ -38,6 +38,8 @@ double Temperature::GetAverageTemp(bool b)
 			k++;
 		}
 
+		if(k == 0) throw -1;
+
 	return sum / k;
 }
 
